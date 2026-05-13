@@ -373,6 +373,7 @@ function renderMain(){
       if(isOpen){div.querySelector('.env-open-msg').textContent=card.msg;}
       else{
         div.addEventListener('click',()=>{
+          if(openedIds.includes(card.id))return; // evita doppi click
           div.querySelector('.env-open-msg').textContent=card.msg;
           div.classList.add('opened');
           playPop();
